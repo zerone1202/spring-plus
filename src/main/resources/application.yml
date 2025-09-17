@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: zerone
+    password: 980324
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+jwt:
+  secret:
+    key: 3O1bR4aakk8iC46bsywF2p8g3WVVqUJITou6aQ75jCgNSvDA4+KlqPjAeK3unaq8zkh+k/7cunKjbcmAZAYw7Q==
