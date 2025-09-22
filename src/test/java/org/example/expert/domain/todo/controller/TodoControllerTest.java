@@ -40,7 +40,7 @@ class TodoControllerTest {
     private TodoService todoService;
 
     @Test
-    @WithMockUser(username = "soyoung", roles = {"USER"})
+    @WithMockUser
     void todo_단건_조회에_성공한다() throws Exception {
         // given
         long todoId = 1L;
@@ -69,7 +69,7 @@ class TodoControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "soyoung", roles = {"USER"})
+    @WithMockUser
     void todo_단건_조회_시_todo가_존재하지_않아_예외가_발생한다() throws Exception {
         // given
         long todoId = 1L;
