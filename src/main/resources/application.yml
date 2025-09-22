@@ -15,3 +15,6 @@ spring:
 jwt:
   secret:
     key: 3O1bR4aakk8iC46bsywF2p8g3WVVqUJITou6aQ75jCgNSvDA4+KlqPjAeK3unaq8zkh+k/7cunKjbcmAZAYw7Q==
+    #    whiteList:
+    #      - /auth/signup
+    #      - /auth/signin
