@@ -8,6 +8,7 @@ import org.example.expert.domain.manager.dto.response.ManagerResponse;
 import org.example.expert.domain.todo.dto.request.TodoSaveRequest;
 import org.example.expert.domain.todo.dto.response.TodoResponse;
 import org.example.expert.domain.todo.dto.response.TodoSaveResponse;
+import org.example.expert.domain.todo.dto.response.TodoSearchResponse;
 import org.example.expert.domain.todo.entity.Todo;
 import org.example.expert.domain.todo.repository.TodoRepository;
 import org.example.expert.domain.user.dto.response.UserResponse;
@@ -27,6 +28,16 @@ public class TodoService {
 
     private final TodoRepository todoRepository;
     private final WeatherClient weatherClient;
+
+    public  Page<TodoSearchResponse> searchTodos(
+            String title,
+            String nickname,
+            LocalDateTime startDate,
+            LocalDateTime endDate,
+            Pageable pageable
+    ) {
+        return todoRepository.searchTodoWithUserQueryDSL(title, nickname, startDate, endDate, pageable);
+    }
 
     @Transactional
     public TodoSaveResponse saveTodo(AuthUser authUser, TodoSaveRequest todoSaveRequest) {
